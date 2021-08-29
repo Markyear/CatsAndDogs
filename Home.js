@@ -8,14 +8,16 @@ class Chat {
         this.like = like;
         this.likeHelper = likeHelper;
 
+
         const maxBooksPerPage = 8;
         let bookId = 1;
+
+
 
         async function loadNewBook(loadBookId) {
 
             let myObject = await fetch("http://localhost:3000/api/v1/chats/"+loadBookId);
             let bookObject = await myObject.json();
-
 
 
             console.log(bookObject);
@@ -33,7 +35,7 @@ class Chat {
         bookId++;
 
         window.addEventListener('scroll', function () {
-            if (window.scrollY >= document.getElementById("mainBookScreen").clientHeight - window.innerHeight - 10 && bookId <= maxBooksPerPage) {
+            if (window.scrollY >= document.getElementById("catChat").clientHeight - window.innerHeight - 10 && bookId <= maxBooksPerPage) {
                 loadNewBook(bookId);
                 bookId++;
             }
@@ -41,6 +43,7 @@ class Chat {
 
 
     }
+
     addComment(chat){
         let note = document.getElementById("catChat");
         let article = document.createElement("article");
@@ -52,14 +55,14 @@ class Chat {
         comment.appendChild(commentNode);
 
 
-        let likeButton = document.createElement("likeButton");
+        let likeButton = document.createElement("BUTTON");
         likeButton.setAttribute("class", "like");
         likeButton.id = chat.headLine+"Like"
         likeButton.addEventListener("click", event => incrementValue(chat));
         likeButton.innerHTML = "Like";
 
         let showLike = document.createElement("p");
-        showLike.id = chat.id +"node";
+        showLike.id = chat.id+"node";
         let showLikeNode = document.createTextNode(chat.like);
         showLikeNode.id = chat.headLine;
         showLike.appendChild(showLikeNode);
@@ -71,7 +74,7 @@ class Chat {
     }
 }
 
-function incrementValue(chat) {
+    function incrementValue(chat) {
     //PP_helper makes sure, that PP can only go up max by 1
     if(chat.likeHelper < 1){
         //console.log(chat.likeHelper);
@@ -81,7 +84,7 @@ function incrementValue(chat) {
         amount.innerHTML = chat.like;
 
 
-        let updateChat = {
+       /* let updateChat = {
             id: chat.id,
             headLine: chat.headLine,
             comment: chat.comment,
@@ -99,7 +102,10 @@ function incrementValue(chat) {
             // alert(response.text)
         }) .catch(function (error){
             // alert(error);
-        });
-    }}
+        });*/
+    }
+ }
+
+    const chat = new Chat();
 
 });

@@ -2,30 +2,38 @@ const chats = new Map();
 let chatId = 1;
 
 chats.set(chatId.toString(), {
-    headLine: "HTML5",
+    id:chatId,
+    headLine: "Cat1",
     comment: "Html5: Up And Running",
-    like: 0
+    like: 0,
+    likeHelper: 0
 });
 
 chatId++;
 chats.set(chatId.toString(), {
-    headLine: "HTML5",
+    id:chatId,
+    headLine: "Cat2",
     comment: "Html5: Up And Running",
-    like: 0
+    like: 0,
+    likeHelper: 0
 });
 
 chatId++;
 chats.set(chatId.toString(), {
-    headLine: "HTML5",
+    id:chatId,
+    headLine: "Cat3",
     comment: "Html5: Up And Running",
-    like: 0
+    like: 0,
+    likeHelper: 0
 });
 
 chatId++;
 chats.set(chatId.toString(), {
-    headLine: "HTML5",
+    id:chatId,
+    headLine: "Cat4",
     comment: "Html5: Up And Running",
-    like: 0
+    like: 0,
+    likeHelper: 0
 });
 
 class ChatModels {
@@ -38,7 +46,7 @@ class ChatModels {
     }
 
     static findChatById(id) {
-        let chat = chat.get(id);
+        let chat = chats.get(id);
         return chat;
     }
 

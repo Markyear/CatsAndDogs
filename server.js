@@ -16,7 +16,7 @@ app.use(cors());
 app.use(express.urlencoded({extended: true}));
 //middleware-> JSON wird in ein JS Objekt umgewandelt
 app.use(express.json());
-app.use('/api/v1/chat', ChatRoutes);
+app.use('/api/v1/chats', ChatRoutes);
 
 // Routen werden automatisch dazugef.
 
@@ -28,6 +28,6 @@ app.listen(port, (error) => {
     if (error) {
         console.error(error);
     } else {
-        console.log("Server listening at http://localhost:${port}");
+        console.log(`Server listening at http://localhost:${port}`);
             }
 });
