@@ -1,15 +1,15 @@
-const ChatModel = require("../models/ChatModel");
+const ChatModels = require("../models/ChatModels");
 
 class ChatController {
     static chat_get_all(req, res) {
-        const chatArray = ChatModel.getChats();
+        const chatArray = ChatModels.getChats();
         res.send(chatArray);
     }
 
 
     static chat_get_by_id(req, res) {
         const {id} = req.params;
-        const getChat = ChatsModel.findChatById(id);
+        const getChat = ChatModels.findChatById(id);
         if (getChat) {
             res.send(getChat);
         } else {

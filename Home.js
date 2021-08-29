@@ -17,7 +17,6 @@ class Chat {
             let bookObject = await myObject.json();
 
 
-
             console.log(bookObject);
 
             //let testObject = Object.values(bookObject);

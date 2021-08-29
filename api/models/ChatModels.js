@@ -30,15 +30,15 @@ chats.set(chatId.toString(), {
 
 class ChatModels {
     static getChats() {
-        let booksArray = [];
-        for (let [id, book] of chats) {
-            booksArray.push({ id, book});
+        let chatArray = [];
+        for (let [id, chat] of chats) {
+            chatArray.push({ id, chat});
         }
-        return booksArray;
+        return chatArray;
     }
 
     static findChatById(id) {
-        let chat = chat.get(id);
+        let chat = chats.get(id);
         return chat;
     }
 
