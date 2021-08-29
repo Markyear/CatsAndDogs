@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header{
+    z-index: 2;
+    text-align: center;
+    background-color: palevioletred;
+    position: fixed;
+    width: 100%;
+}
+
+
+nav{
+    z-index: 2;
+    background-color: yellow;
+    position: fixed;
+    height: 100%;
+    width: 7%;
+    top: 55px;
+}
+
+main{
+    z-index: 1;
+    position: relative;
+    left: 7%;
+    top: 55px;
+    background-color: lightgrey;
+}
