@@ -1,21 +1,5 @@
-//window.alert("hello")
-/*
-window.addEventListener('beforeunload', function(event) {
-    event.returnValue = 'Ihre individuelle Fehlermeldung ...';
-});*/
-
-
-
 document.addEventListener("DOMContentLoaded", function(event) {console.log("DOM fully loaded and parsed");
 
-/*
-function myFunction1() {
-    alert("Hello");
-}
-
-let btn1 = document.getElementById("btn1");
-btn1.addEventListener("click", myFunction1);
-*/
 
 
 async function getCatPic(){
