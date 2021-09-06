@@ -52,12 +52,18 @@ class ChatModels {
 
     
 
-    static createBook(book) {
-        /*************************************************************************
-         *****                                                               *****
-         *****   Add Method for creating a new book in the chats map by id   *****
-         *****                                                               *****
-         *************************************************************************/
+    static createChat(chat) {
+        chatId ++;
+
+        chats.set(chatId.toString(), {
+            headLine: chat.headLine,
+            comment: chat.comment,
+            like: 0,
+            likeHelper: 0
+
+        });
+
+
     }
 
     static updateBookById(id, book) {

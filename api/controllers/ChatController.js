@@ -18,11 +18,9 @@ class ChatController {
     }
 
     static chat_create_chat(req, res) {
-        /******************************************************
-         *****                                            *****
-         *****   Add Controller for creating a new book   *****
-         *****                                            *****
-         ******************************************************/
+        let chat = req.body;
+        ChatModels.createChat(chat);
+        res.status(201).send("Chat entry was created");
     }
 
     static chat_update_chat_by_id(req, res) {
