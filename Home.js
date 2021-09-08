@@ -14,9 +14,10 @@ class Chat {
 
 
 
-        async function loadNewBook(loadBookId) {
 
-            let myObject = await fetch("http://localhost:3000/api/v1/chats/"+loadBookId);
+        async function loadNewChat(loadChatId) {
+
+            let myObject = await fetch("http://localhost:3000/api/v1/chats/"+loadChatId);
             let bookObject = await myObject.json();
 
 
@@ -29,14 +30,14 @@ class Chat {
 
         }
 
-        loadNewBook(bookId);
+        loadNewChat(bookId);
         bookId++;
-        loadNewBook(bookId);
+        loadNewChat(bookId);
         bookId++;
 
         window.addEventListener('scroll', function () {
             if (window.scrollY >= document.getElementById("catChat").clientHeight - window.innerHeight - 10 && bookId <= maxBooksPerPage) {
-                loadNewBook(bookId);
+                loadNewChat(bookId);
                 bookId++;
             }
         });
@@ -47,6 +48,7 @@ class Chat {
     addComment(chat){
         let note = document.getElementById("catChat");
         let article = document.createElement("article");
+        article.id ="article"+chat.id;
         let headLine = document.createElement("h2");
         let chatNote = document.createTextNode(chat.headLine);
         headLine.appendChild(chatNote);
@@ -66,13 +68,41 @@ class Chat {
         let showLikeNode = document.createTextNode(chat.like);
         showLikeNode.id = chat.headLine;
         showLike.appendChild(showLikeNode);
+        let deleteButton = document.createElement("BUTTON");
+        deleteButton.setAttribute("class", "delete Button");
+
+        deleteButton.addEventListener("click", event => deleteChat(chat.id));
+        deleteButton.innerHTML = 'delete';
         note.appendChild(article);
         article.appendChild(headLine);
         article.appendChild(comment);
         article.appendChild(likeButton);
         article.appendChild(showLike);
+        article.appendChild(deleteButton);
     }
 }
+    function deleteChat(id) {
+        alert("chat got deleted");
+        let removeChat = document.getElementById("article" + id);
+
+
+        let url = "http://localhost:3000/api/v1/chats/" + id;
+
+        let opts = {
+            method: 'DELETE',
+            headers: {}
+        };
+        fetch(url, opts)
+            //.then(function (response) {
+           // if (response.ok) {
+                //erst wenn es klappt wird das Objekt vom DOM gelöscht
+                removeChat.remove();
+                // alert(response.json());
+          //  }
+     //   }).catch(function (error) {
+            // alert(error);
+     //   });
+    }
 
     function incrementValue(chat) {
     //PP_helper makes sure, that PP can only go up max by 1

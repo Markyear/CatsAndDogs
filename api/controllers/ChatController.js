@@ -32,11 +32,11 @@ class ChatController {
     }
 
     static delete_chat_by_id(req, res) {
-        /******************************************************
-         *****                                            *****
-         *****  Add Controller for deleting a book by id  *****
-         *****                                            *****
-         ******************************************************/
+        const {id} = req.params;
+        console.log("deleting meme with id: "+ id);
+        ChatModels.deleteChatById(id);
+        res.status(200).send("chat was deleted");
+
     }
 }
 

@@ -66,20 +66,11 @@ class ChatModels {
 
     }
 
-    static updateBookById(id, book) {
-        /*************************************************************************
-         *****                                                               *****
-         *****     Add Method for updating a book in the chats map by id     *****
-         *****                                                               *****
-         *************************************************************************/
-    }
 
-    static deleteBookById(id) {
-        /*************************************************************************
-         *****                                                               *****
-         *****    Add Method for deleting a book from the chats map by id    *****
-         *****                                                               *****
-         *************************************************************************/
+    static deleteChatById(id) {
+
+        chats.delete(id);
+
     }
 }
 

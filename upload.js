@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     function sendButtonIsClicked() {
 
-        alert("test");
+        alert("your message has been posted");
 
         let headline = document.getElementById("myForm").elements[0].value;
         let comment = document.getElementById("myForm").elements[1].value;
