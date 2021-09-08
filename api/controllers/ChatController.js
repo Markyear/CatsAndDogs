@@ -24,14 +24,14 @@ class ChatController {
     }
 
     static chat_update_chat_by_id(req, res) {
-        /******************************************************
-         *****                                            *****
-         *****  Add Controller for updating a book by id  *****
-         *****                                            *****
-         ******************************************************/
+        const {id} = req.params;
+        let chat = req.body;
+        ChatModels.updateLikes(id, chat);
+        res.status(201).send("Likes were updated");
     }
 
     static delete_chat_by_id(req, res) {
+
         const {id} = req.params;
         console.log("deleting meme with id: "+ id);
         ChatModels.deleteChatById(id);

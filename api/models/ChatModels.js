@@ -72,6 +72,18 @@ class ChatModels {
         chats.delete(id);
 
     }
+
+    static updateLikes(id, chat){
+
+        chats.set(id.toString(), {
+            headLine: chat.headLine,
+            comment: chat.comment,
+            like: chat.like,
+            likeHelper: 0
+
+        });
+
+    }
 }
 
 

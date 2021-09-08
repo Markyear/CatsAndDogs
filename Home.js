@@ -92,16 +92,13 @@ class Chat {
             method: 'DELETE',
             headers: {}
         };
-        fetch(url, opts)
+        fetch(url, opts);
             //.then(function (response) {
            // if (response.ok) {
                 //erst wenn es klappt wird das Objekt vom DOM gelöscht
                 removeChat.remove();
                 // alert(response.json());
-          //  }
-     //   }).catch(function (error) {
-            // alert(error);
-     //   });
+
     }
 
     function incrementValue(chat) {
@@ -114,25 +111,30 @@ class Chat {
         amount.innerHTML = chat.like;
 
 
-       /* let updateChat = {
-            id: chat.id,
+        let updateChat = {
             headLine: chat.headLine,
             comment: chat.comment,
             like: chat.like
         };
 
-        let opts = {
+      /*  let opts = {
             method: 'PUT',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify(updateChat),
         };
         let url = "http://localhost:3000/api/v1/chat/" +chat.id;
 
-        fetch(url, opts).then(function (response){
-            // alert(response.text)
-        }) .catch(function (error){
-            // alert(error);
-        });*/
+        fetch(url, opts);*/
+
+        fetch('http://localhost:3000/api/v1/chats/'+chat.id, {
+            method: 'PUT',
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify(updateChat),
+        }).then(function (response){
+
+        });
+
+
     }
  }
 
