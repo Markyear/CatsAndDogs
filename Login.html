@@ -16,9 +16,9 @@
 <body>
 
 <header>
-    <h1>Look at Dog Pics</h1>
+    <h1>The Login</h1>
 
-    <p>See pictures of dogs from all around the world!</p>
+    <p>Login now!</p>
 
 </header>
 
@@ -33,12 +33,14 @@
 </nav>
 
 <main>
-    <section>
-        <h1>DogPics</h1>
-        <img id="dogImg" src="CatsAndDogsPlaceholder/20191221_035806.jpg" alt="DogPic" width="50%" height="50%">
-    </section>
+    <form id="CSSLoginForm" action="auth" methode="POST">
+        <input type="text" name="username" placeholder="Username" required>
+        <br>
+        <input type="password" name="password" placeholder="Password" required>
+        <br>
+        <input type="submit">
+    </form>
+
 </main>
-
-
 </body>
 </html>

@@ -3,8 +3,8 @@ let chatId = 1;
 
 chats.set(chatId.toString(), {
     id:chatId,
-    headLine: "Cat1",
-    comment: "Html5: Up And Running",
+    headLine: "Cats and disease",
+    comment: "It's said, that cats can absorb disease from a human being",
     like: 0,
     likeHelper: 0
 });
@@ -12,8 +12,8 @@ chats.set(chatId.toString(), {
 chatId++;
 chats.set(chatId.toString(), {
     id:chatId,
-    headLine: "Cat2",
-    comment: "Html5: Up And Running",
+    headLine: "Cats and stress",
+    comment: "Cats can decrease your stress-level by petting them",
     like: 0,
     likeHelper: 0
 });
@@ -21,8 +21,8 @@ chats.set(chatId.toString(), {
 chatId++;
 chats.set(chatId.toString(), {
     id:chatId,
-    headLine: "Cat3",
-    comment: "Html5: Up And Running",
+    headLine: "Cats are awesome",
+    comment: "My cat is the greatest",
     like: 0,
     likeHelper: 0
 });
@@ -30,11 +30,80 @@ chats.set(chatId.toString(), {
 chatId++;
 chats.set(chatId.toString(), {
     id:chatId,
-    headLine: "Cat4",
-    comment: "Html5: Up And Running",
+    headLine: "Cats are like goats",
+    comment: "they climb trees",
     like: 0,
     likeHelper: 0
 });
+
+
+class ChatModels {
+    static getChats() {
+        let chatArray = [];
+        for (let [id, chat] of chats) {
+            chatArray.push({ id, chat});
+        }
+        return chatArray;
+    }
+
+    static findChatById(id) {
+        let chat = chats.get(id);
+        return chat;
+    }
+
+
+
+    static createChat(chat) {
+        chatId ++;
+
+        chats.set(chatId.toString(), {
+            headLine: chat.headLine,
+            comment: chat.comment,
+            like: 0,
+            likeHelper: 0
+
+        });
+
+
+    }
+
+
+    static deleteChatById(id) {
+
+        chats.delete(id);
+
+    }
+
+    static updateLikes(id, chat){
+
+        chats.set(id.toString(), {
+            headLine: chat.headLine,
+            comment: chat.comment,
+            like: chat.like,
+            likeHelper: 0
+
+        });
+
+    }
+}
+
+
+module.exports = ChatModels;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 
 class ChatModels {
     static getChats() {
@@ -67,21 +136,13 @@ class ChatModels {
     }
 
     static updateBookById(id, book) {
-        /*************************************************************************
-         *****                                                               *****
-         *****     Add Method for updating a book in the chats map by id     *****
-         *****                                                               *****
-         *************************************************************************/
+
     }
 
     static deleteBookById(id) {
-        /*************************************************************************
-         *****                                                               *****
-         *****    Add Method for deleting a book from the chats map by id    *****
-         *****                                                               *****
-         *************************************************************************/
+
     }
 }
 
 
-module.exports = ChatModels;
+module.exports = ChatModels;*/

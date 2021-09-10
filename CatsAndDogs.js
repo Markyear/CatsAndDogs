@@ -31,8 +31,55 @@ async function getDogPic(){
 
 getCatPic();
 getDogPic();
-getCatFact()
+getCatFact();
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
     class Chat {
         constructor(id, headLine, comment, like, likeHelper) {
             this.id = id;
@@ -72,7 +119,6 @@ getCatFact()
     }
 
     function incrementValue(chat) {
-        //PP_helper makes sure, that PP can only go up max by 1
         if(chat.likeHelper < 1){
             //console.log(chat.likeHelper);
             chat.like = chat.like + 1;
@@ -101,5 +147,6 @@ getCatFact()
                 // alert(error);
             });
         }}
+*/
 
 });
